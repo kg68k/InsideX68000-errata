@@ -785,6 +785,36 @@ R0（アドレス：<span>$</span>E82400<span> </span>）
 
 
 <article>
+<h2>BG画面設定＆スクロール（S1.C）</h2>
+
+<h3><a id="p253_list8" href="#p253_list8">P.253 リスト8 &nbsp; 13～14,24～25行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre class="text-only">
+13:    volatile unsigned short *<span>videor3</span> = (unsigned short *)0x00e82600;
+14:    volatile unsigned short *<span>videor2</span> = (unsigned short *)0x00e82500;
+
+24:        *<span>videor3</span> |= 0x40;
+25:        *<span>videor2</span> = (*<span>videor2</span> &amp; 0xff) | 0x1200;
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre class="text-only">
+13:    volatile unsigned short *<span>videor2</span> = (unsigned short *)0x00e82600;
+14:    volatile unsigned short *<span>videor1</span> = (unsigned short *)0x00e82500;
+
+24:        *<span>videor2</span> |= 0x40;
+25:        *<span>videor1</span> = (*<span>videor1</span> &amp; 0xff) | 0x1200;
+</pre>
+</div>
+</div>
+<p class="info">2021-03-01</p>
+</article>
+
+
+<article>
 <h2>OPM ステータスレジスタ</h2>
 
 <h3><a id="p267_z6" href="#p267_z6">P.267 図6</a></h3>
