@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<title>X68000/X68030 非公開機能</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+<h1>X68000/X68030 非公開機能</h1>
+</header>
+
+
+<article>
+<h2>CRTC</h2>
+
+<h3><a id="crtc_r20" href="#crtc_r20">CRTC R20 ($e80028)</a></h3>
+<div class="box">
+<div class="ok">
+<pre>
+bit 15      13  12  11  10   9   8   7       5   4   3   2   1   0
+  ┌─────┬─┬─┬─┬───┬─────┬─┬───┬───┐
+  │          │  │  │  │  COL │          │HF│  VD  │  HD  │
+  └─────┴─┴─┴─┴───┴─────┴─┴───┴───┘
+                │  │  └ SIZE
+                │ <span>G-MEM</span>
+                │   <span>0: グラフィックVRAMを表示用として使用</span>
+                │   <span>1: グラフィックVRAMをバッファメモリとして使用(bit8～10は無効)</span>
+                │
+                └ <span>T-MEM</span>
+                     <span>0: テキストVRAMを表示用として使用</span>
+                     <span>1: テキストVRAMをバッファメモリとして使用</span>
+</pre>
+</div>
+</div>
+<p>参考: <a href="https://twitter.com/kugimoto0715/status/653614572713054208">@kugimoto0715/653614572713054208</a></p>
+<p class="info">2020-02-28</p>
+</article>
+
+
+<article>
+<h2>ビデオコントローラ</h2>
+
+<h3><a id="vc_r2" href="#vc_r2">VC R2 ($e82600)</a></h3>
+<div class="box">
+<div class="ok">
+<pre>
+bit 15    14    13    12    11    10     9     8     7     6     5     4     3     2     1     0
+┌──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┐
+│ YS │ AH │VHT │EXON│H/P │B/P │G/G │G/T │<span>BCON</span>│SON │TON │GS4 │GS3 │GS2 │GS1 │GS0 │
+└──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┘
+                                                   │
+                                                   <span>0: ボーダーカラー表示オフ</span>
+                                                   <span>1:         〃        オン</span>
+</pre>
+</div>
+</div>
+<p>BCONが'1'のとき、ボーダーカラー表示オン(グラフィックパレット 0 のパレットデータが出力される)。</p>
+<p>実際の動作は、各パレットからパレット 0 の値が引かれるものと思われる。</p>
+<p>参考: <a href="https://twitter.com/TransAmGTA92/status/1336672177458823169">@TransAmGTA92/1336672177458823169</a></p>
+<p class="info">2020-02-28</p>
+</article>
+
+
+<footer>
+<p><a href="./">README</a></p>
+</footer>
+
+</body>
+</html>

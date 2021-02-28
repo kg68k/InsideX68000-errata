@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<title>Inside X68000 非公式正誤表</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+<h1>Inside X68000 非公式正誤表</h1>
+</header>
+
+   
+<article>
+<h2>DMAC デバイスコントロールレジスタ</h2>
+
+<h3><a id="p44_z12" href="#p44_z12">P.44 図12</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre class="text-only">
+デバイスポートサイズ
+   0:８<span>と</span>ポート
+   1:16<span>と</span>ポート
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre class="text-only">
+デバイスポートサイズ
+   0:８<span>ビット</span>ポート
+   1:16<span>ビット</span>ポート
+</pre>
+</div>
+</div>
+<p class="info">1997-02-22</p>
+</article>
+
+
+<article>
+<h2>DMAC REQG(リクエストジェネレーションメソッド)</h2>
+
+<h3><a id="p49_reqg_l1" href="#p49_reqg_l1">P.49 「❺・❷ 9 | REQG(リクエストジェネレーションメソッド)」 1行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+…，外部<span>転送要求</span>などの転送モードを…
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+…，外部<span>要求転送</span>などの転送モードを…
+</pre>
+</div>
+</div>
+<p class="info">1997-02-22</p>
+
+<h3><a id="p49_reqg_l4" href="#p49_reqg_l4">P.49 同 4行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+…，'<span>10</span>' のときには…
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+…，'<span>00</span>' のときには…
+</pre>
+</div>
+</div>
+<p class="info">1997-02-22</p>
+</article>
+
+
+<article>
+<h2>DMAC STR(スタートオペレーション)</h2>
+
+<h3><a id="p52_str_l1" href="#p52_str_l1">P.52 「❺・❸ 3 | STR(スタートオペレーション)」 1行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+…，<span>DAC</span> レジスタ…
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+…，<span>DMAC</span> レジスタ…
+</pre>
+</div>
+</div>
+<p class="info">1999-02-18</p>
+</article>
+
+
+<article>
+<h2>DMAC CPR(チャンネルプライオリティレジスタ)</h2>
+
+<h3><a id="p54_z18" href="#p54_z18">P.54 図18</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre class="text-only">
+01: 2番目に高い優先度
+10: <span>       〃        </span>
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre class="text-only">
+01: 2番目に高い優先度
+10: <span>3番目に高い優先度</span>
+</pre>
+</div>
+</div>
+<p class="info">2021-02-28</p>
+</article>
+
+
+<article>
+<h2>DMAC Human68k の初期設定値</h2>
+
+<h3><a id="p57_z21" href="#p57_z21">P.57 図21</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+│ EIV ┃ $0f │ $0f │ $<span>09</span> │ $6b │
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+│ EIV ┃ $0f │ $0f │ $<span>69</span> │ $6b │
+</pre>
+</div>
+</div>
+<p class="info">1996-05-09</p>
+</article>
+
+
+<article>
+<h2>MFP レジスタ一覧</h2>
+
+<h3><a id="p80_z2" href="#p80_z2">P.80 図2</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+タイマ<span>C</span>コントロールレジスタ
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+タイマ<span>C&amp;D</span>コントロールレジスタ
+</pre>
+</div>
+</div>
+<p class="info">1997-02-22</p>
+</article>
+
+
+<article>
+<h2>MFP GPIP,AER,DDRのビット配置</h2>
+
+<h3><a id="p81_z2" href="#p81_z2">P.81 図3</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre class="text-only">
+・AERレジスタ：各信号ごとに，割り込みを発生させる変化方向を設定する
+                0：'<span>0</span>'→'<span>1</span>'の変化で割り込み発生
+                1：'<span>1</span>'→'<span>0</span>'の変化で割り込み発生
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre class="text-only">
+・AERレジスタ：各信号ごとに，割り込みを発生させる変化方向を設定する
+                0：'<span>1</span>'→'<span>0</span>'の変化で割り込み発生
+                1：'<span>0</span>'→'<span>1</span>'の変化で割り込み発生
+</pre>
+</div>
+</div>
+<p class="info">(情報源: X68000 関係資料正誤表) 2021-02-28</p>
+</article>
+
+
+<article>
+<h2>MFP IERA,IPRA,ISRA,IMRA</h2>
+
+<h3><a id="p83_z4" href="#p83_z4">P.83 図4</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+MPSC受信バッファ<span>エンプティ</span>(受信データ読み取り要求)割り込み
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+MPSC受信バッファ<span>フル</span>(受信データ読み取り要求)割り込み
+</pre>
+</div>
+</div>
+<p class="info">1997-02-22</p>
+</article>
+
+
+<article>
+<h2>MFP タイマ ディレイモード</h2>
+
+<h3><a id="p88_delay_l2" href="#p88_delay_l2">P.88 「❻・❶ 1 | ディレイモード」 2～3行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre class="text-only">
+　たとえば，プリスケーラとして1/<span>100</span>を選び，タイマデータレジスタに<span>400</span>をセットすると，
+8ビットカウンタの出力は4MHz/(<span>400</span>×<span>100</span>)＝100Hzとなり，…
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre class="text-only">
+　たとえば，プリスケーラとして1/<span>200</span>を選び，タイマデータレジスタに<span>200</span>をセットすると，
+8ビットカウンタの出力は4MHz/(<span>200</span>×<span>200</span>)＝100Hzとなり，…
+</pre>
+</div>
+</div>
+<p>※編注：タイマデータレジスタは8ビットなので400はセットできない。結果の周波数を合わせるなら上記の設定となる。</p>
+<p class="info">2021-02-28</p>
+</article>
+
+
+<article>
+<h2>MFP UCR(USART コントロールレジスタ)</h2>
+
+<h3><a id="p94_ucrwl_l2" href="#p94_ucrwl_l2">P.94 「❼・❷ 2 | WL」 2行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+'<span>00</span>'のときには5ビットとなります。…
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+'<span>11</span>'のときには5ビットとなります。…
+</pre>
+</div>
+</div>
+<p class="info">(情報源: X68000 関係資料正誤表) 2021-02-28</p>
+</article>
+
+
+<article>
+<h2>MFP RSR(レシーバステータスレジスタ)</h2>
+
+<h3><a id="p96_z11" href="#p96_z11">P.96 図11</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+図……11 RSR(レシーバステータスレジスタ) $E880<span>1B</span>
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+図……11 RSR(レシーバステータスレジスタ) $E880<span>2B</span>
+</pre>
+</div>
+</div>
+<p class="info">1996-05-09</p>
+</article>
+
+
+<article>
+<h2>数値演算プロセッサ 68881 が扱うことができるデータのフォーマット</h2>
+
+<h3><a id="p108_z4" href="#p108_z4">P.108 図4</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+   ┌┬──────┬────
+   ││    <span>    </span>    │ つねに0    拡張精度実数(X)
+   └┴──────┴────
+
+bit 95      91    <span>81 80</span>
+   ┌┬┬┬┬───┬────
+   │││  │ <span>    </span> │ つねに0    パック型式10進(P)
+   └┴┴┴┴───┴────
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+   ┌┬──────┬────
+   ││    <span>指数</span>    │ つねに0    拡張精度実数(X)
+   └┴──────┴────
+
+bit 95      91    <span>80 79</span>
+   ┌┬┬┬┬───┬────
+   │││  │ <span>指数</span> │ つねに0    パック型式10進(P)
+   └┴┴┴┴───┴────
+</pre>
+</div>
+</div>
+<p class="info">1997-11-17</p>
+</article>
+
+
+<article>
+<h2>数値演算プロセッサ オペランド CIR</h2>
+
+<h3><a id="p112_z8" href="#p112_z8">P.112 図8</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
++$10│       オペランドCIR(<span>W</span>)    │
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
++$10│       オペランドCIR(<span>R/W</span>)  │
+</pre>
+</div>
+</div>
+<p class="info">1997-11-17</p>
+</article>
+
+
+<article>
+<h2>数値演算プロセッサ ヌルプリミティブの内容</h2>
+
+<h3><a id="p117_z10" href="#p117_z10">P.117 図10</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+条件判断<span>クラブ</span>
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+条件判断<span>フラグ</span>
+</pre>
+</div>
+</div>
+<p class="info">(情報源: <a href="https://twitter.com/moveccr/status/704853940253257728">@moveccr/704853940253257728</a>) 2021-02-28</p>
+</article>
+
+
+<article>
+<h2>RTC RESET コントローラ</h2>
+
+<h3><a id="p154_z9" href="#p154_z9">P.154 図9</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+ bit 7                <span>      4     3</span>         bit 0
+┌──┬──┬──┬──┬──┬──┬──┬──┐
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+ bit 7                <span>4     3      </span>         bit 0
+┌──┬──┬──┬──┬──┬──┬──┬──┐
+</pre>
+</div>
+</div>
+<p class="info">1998-11-17</p>
+</article>
+
+
+<article>
+<h2>３  画面制御</h2>
+
+<h3><a id="p181_crt" href="#p181_crt">P.181 「❸・1 | CTRインタフェースの構造」 見出し</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+❸・1 | <span>CTR</span>インタフェースの構造
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+❸・1 | <span>CRT</span>インタフェースの構造
+</pre>
+</div>
+</div>
+<p class="info">1998-12-19</p>
+</article>
+
+
+<article>
+<h2>CRTC 動作ポート</h2>
+
+<h3><a id="p183_z13" href="#p183_z13">P.183 図13</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+<span>┸</span>─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┨
+<span>  </span>                              <span>│</span>              │R │0 │F │V ┃
+<span>  </span>                              <span>│</span>              │C │  │C │I ┃
+<span>                                ┗</span>━┷━┷━┷━┷━┷━┷━┷━┛
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+<span>╂</span>─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┨
+<span>┃</span>                              <span>  </span>              │R │0 │F │V ┃
+<span>┃</span>                              <span>  </span>              │C │  │C │I ┃
+<span>┗━┷━┷━┷━┷━┷━┷━┷━┷</span>━┷━┷━┷━┷━┷━┷━┷━┛
+</pre>
+</div>
+</div>
+<p class="info">2021-02-28</p>
+
+<h3><a id="p201_z24" href="#p201_z24">P.201 図24</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+<span>                             bit7</span>                        bit0
+<span>                            ┌</span>─┬─┬─┬─┬─┬─┬─┬─┐
+<span>                            │</span>              │RC│0 │FC│VI│
+<span>                            └</span>─┴─┴─┴─┴─┴─┴─┴─┘
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+<span> bit15                           </span>                        bit0
+<span>┌─┬─┬─┬─┬─┬─┬─┬</span>─┬─┬─┬─┬─┬─┬─┬─┐
+<span>│                            </span>              │RC│0 │FC│VI│
+<span>└─┴─┴─┴─┴─┴─┴─┴</span>─┴─┴─┴─┴─┴─┴─┴─┘
+</pre>
+</div>
+</div>
+<p class="info">2021-02-28</p>
+
+<h3><a id="p203_fc_l12" href="#p203_fc_l12">P.203 「<span>1︎⃣</span> グラフィック画面の高速クリア」 12～13行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+を指示します。<span>CRTC動作ポートは，バイト(8ビット)ポートであることに注意してくださ
+い。</span>高速クリア動作が…
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+を指示します。<span>                                                                 
+    </span>高速クリア動作が…
+</pre>
+</div>
+</div>
+<p class="info">2021-02-28</p>
+</article>
+
+
+<article>
+<h2>スプライトコントローラ</h2>
+
+<h3><a id="p185_z15" href="#p185_z15">P.185 図15</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+│$EB0004┃ ┃<span>TR</span>│HR│    │ COLOR│   SPAT#  ┃
+│       ┃ ┠─┴─┴──┴───┴──┬──┨
+│$EB0006┃ ┃                          │ <span>PAW</span>┃
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+│$EB0004┃ ┃<span>VR</span>│HR│    │ COLOR│   SPAT#  ┃
+│       ┃ ┠─┴─┴──┴───┴──┬──┨
+│$EB0006┃ ┃                          │ <span>PRW</span>┃
+</pre>
+</div>
+</div>
+<p class="info">1997-05-19</p>
+</article>
+
+
+<article>
+<h2>BG スクロールレジスタ(BG コントロール)</h2>
+
+<h3><a id="p190_z18" href="#p190_z18">P.190 図18</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+<span>GB1</span>はBGデータエリア0を使用 0  0
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+<span>BG1</span>はBGデータエリア0を使用 0  0
+</pre>
+</div>
+</div>
+<p class="info">1997-02-10</p>
+</article>
+
+
+<article>
+<h2>スプライトスクロールレジスタ</h2>
+
+<h3><a id="p191_z19" href="#p191_z19">P.191 図19</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
++4 │VR│HR│      │  COLOR │            SPAT#               │
+   └─┴─┴───┴────┴────────────────┘
+     <span>                                     </span>
+   ┌────────────────────────┬─┬──┐
++6 │                                                │'0│PRW │
+   └────────────────────────┴─┴──┘
+  /   /              /                /
+ /   /              /                /
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
++4 │VR│HR│      │  COLOR │            SPAT#               │
+   └─┴─┴───┴────┴────────────────┘
+     <span>/   /              /                /</span>
+   ┌────────────────────────┬─┬──┐
++6 │                                                │'0│PRW │
+   └────────────────────────┴─┴──┘
+  /   /              /                /
+ /   /              /                /
+</pre>
+</div>
+</div>
+<p>※技術資料によると、'0'は拡張。</p>
+<p class="info">1997-02-10</p>
+</article>
+
+
+<article>
+<h2>BG スクロールレジスタ</h2>
+
+<h3><a id="p199_z23" href="#p199_z23">P.199 図23</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+$EB0800 $EB0804│            │         <span>Y</span>座標        │
+               └──────┴──────<span>─</span>────┘
+               ┌──────┬───────────┐
+$EB0802 $EB0806│            │         <span>X</span>座標        │
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+$EB0800 $EB0804│            │         <span>X</span>座標        │
+               └──────┴──────<span>┬</span>────┘
+               ┌──────┬───────────┐
+$EB0802 $EB0806│            │         <span>Y</span>座標        │
+</pre>
+</div>
+</div>
+<p class="info">1997-02-10</p>
+</article>
+
+
+<article>
+<h2>テキスト画面のアクセスマスク</h2>
+
+<h3><a id="p202_z27" href="#p202_z27">P.202  図27</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre class="text-only">
+'<span>1</span>'のビット……データが変更される
+'<span>0</span>'のビット……データが変更されない
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre class="text-only">
+'<span>0</span>'のビット……データが変更される
+'<span>1</span>'のビット……データが変更されない
+</pre>
+</div>
+<p class="info">1996-05-09</p>
+</div>
+
+<h3><a id="p205_am_l8" href="#p205_am_l8">P.205 「<span>1︎⃣</span> アクセスマスク」 8～9行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre class="text-only">
+…データを変更したいビットを'<span>1</span>'，変更したくないビ
+ットを'<span>0</span>'にしたマスクパターンを書き込んでおき，…
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre class="text-only">
+…データを変更したいビットを'<span>0</span>'，変更したくないビ
+ットを'<span>1</span>'にしたマスクパターンを書き込んでおき，…
+</pre>
+</div>
+</div>
+<p class="info">1996-05-09</p>
+</article>
+
+
+<article>
+<h2>グラフィックパレット</h2>
+
+<h3><a id="p216_z36" href="#p216_z36">P.216 図36</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+$E820<span>00</span>  $00┌───            $E820<span>02</span>  $00┌───
+  (         │                    (         │
+   )        │                     )        │
+$E821<span>FC</span>  $FF└───            $E821<span>FE</span>  $FF└───
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+$E820<span>02</span>  $00┌───            $E820<span>00</span>  $00┌───
+  (         │                    (         │
+   )        │                     )        │
+$E821<span>FE</span>  $FF└───            $E821<span>FC</span>  $FF└───
+</pre>
+</div>
+</div>
+<p class="info">1997-01-28</p>
+</article>
+
+
+<article>
+<h2>CRTC R03 の設定値の算出法</h2>
+
+<h3><a id="p233_z53" href="#p233_z53">P.233 図53</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+         ((水平同期期間)<span>＋</span>(水平フロントポーチ))×…
+〔R03〕= ─────────────────────
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+         ((水平同期期間)<span>－</span>(水平フロントポーチ))×…
+〔R03〕= ─────────────────────
+</pre>
+</div>
+</div>
+<p class="info">1996-05-09</p>
+</article>
+
+
+<article>
+<h2>CRTC R20</h2>
+
+<h3><a id="p233_z54" href="#p233_z54">P.233 図54</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+                                                 1  0 <span>未定義</span>
+                                                 1  1 未定義
+                                                 │ │
+                                                 │ │   0  0 水平256ドット
+                                                 │ │   0  1  〃 512  〃
+                                                 │ │   1  0 <span>未定義</span>
+                                                 │ │   1  1 <span>水平768ドット</span>
+                                                 │ │  │ │
+   bit 15             <span>8    9 10</span>                  │ │  │ bit0
+  ┌───────┬──┬───┬────┬─┬───┬───┐ 
+  │              │ SIZ│  COL │        │HF│  VD  │  HD  │
+  └───────┴──┴───┴────┴─┴───┴───┘ 
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+                                                 1  0 <span>未定義(垂直1024ドット)</span>
+                                                 1  1 未定義
+                                                 │ │
+                                                 │ │   0  0 水平256ドット
+                                                 │ │   0  1  〃 512  〃
+                                                 │ │   1  0 <span> 〃 768  〃</span>
+                                                 │ │   1  1 <span>未定義(クロック50MHz)</span>
+                                                 │ │  │ │
+   bit 15            <span>10    9  8</span>                  │ │  │ bit0
+  ┌───────┬──┬───┬────┬─┬───┬───┐
+  │              │ SIZ│  COL │        │HF│  VD  │  HD  │
+  └───────┴──┴───┴────┴─┴───┴───┘
+</pre>
+</div>
+</div>
+
+<p>※HF=1(水平偏向周波数31.5kHz)の時、VD=%10/%11は垂直1024ドット・インタレース。</p>
+<p>※X68000 Compact XVI及びX68030では、HD=%11はクロック50MHzモード。</p>
+<p>※<a href="undisclosed.html#crtc_r20">bit 12,11</a>は非公開機能。</p>
+<p class="info">2020-02-28</p>
+
+<h3><a id="p233_z54_2" href="#p233_z54_2">P.233 図54 下部 SIZ・COL の説明2行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+R0（アドレス：<span> </span>E82400<span>H</span>）
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+R0（アドレス：<span>$</span>E82400<span> </span>）
+</pre>
+</div>
+</div>
+<p class="info">(情報源: <a href="https://twitter.com/moveccr/status/759951285030313984">@moveccr/759951285030313984</a>) 2021-02-28</p>
+</article>
+
+
+<article>
+<h2>768×512ドットモードでの65536色表示（V1.C）</h2>
+
+<h3><a id="p250_list6" href="#p250_list6">P.250 リスト6 &nbsp; 12,16,21行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+12:    short   *vram, *crtcr20, *<span>vcr1</span>, *palette;
+
+16:    <span>vcr1</span>    = (short *)0xe82400;    /* Video Controller <span>R1</span>  */
+
+21:    *<span>vcr1</span>   = 3;
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+12:    short   *vram, *crtcr20, *<span>vcr0</span>, *palette;
+
+16:    <span>vcr0</span>    = (short *)0xe82400;    /* Video Controller <span>R0</span>  */
+
+21:    *<span>vcr0</span>   = 3;
+</pre>
+</div>
+</div>
+<p class="info">(情報源: <a href="https://twitter.com/moveccr/status/759951978990415873">@moveccr/759951978990415873</a>) 2021-02-28</p>
+</article>
+
+
+<article>
+<h2>OPM ステータスレジスタ</h2>
+
+<h3><a id="p267_z6" href="#p267_z6">P.267 図6</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+┬───┬───┐
+│<span>1ST(A)</span>│<span>1ST(B)</span>│
+┴───┴───┘
+   │       │ 
+   └┐     1:タイマ <span>B</span> オーバフロー発生
+     │     0:タイマ <span>B</span> はオーバフローしていない
+1:タイマ <span>A</span> オーバフロー発生
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+┬───┬───┐
+│<span>IST(B)</span>│<span>IST(A)</span>│
+┴───┴───┘
+   │       │ 
+   └┐     1:タイマ <span>A</span> オーバフロー発生
+     │     0:タイマ <span>A</span> はオーバフローしていない
+1:タイマ <span>B</span> オーバフロー発生
+</pre>
+</div>
+</div>
+<p class="info">2021-02-28</p>
+</article>
+
+
+<article>
+<h2>OPM タイマ制御レジスタ</h2>
+
+<h3><a id="p273_opm14_l3" href="#p273_opm14_l3">P.273 「❷・❻ 6 | タイマ制御レジスタ」 3～7行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre class="text-only">
+                                                       …，ステータスレジスタの<span>1</span>
+<span>ST</span>ビットを'1'にセットします。
+　ビット4,5はステータスレジスタの<span>1ST</span>ビットをクリアするための制御ビットで，ビット
+4がタイマＡ，ビット5がタイマＢの<span>1ST</span>ビットクリアに使用されます。このビットを'1'に
+すると、該当する<span>1ST</span>ビットがクリアされます。
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre class="text-only">
+                                                       …，ステータスレジスタの<span>I</span>
+<span>ST</span>ビットを'1'にセットします。
+　ビット4,5はステータスレジスタの<span>IST</span>ビットをクリアするための制御ビットで，ビット
+4がタイマＡ，ビット5がタイマＢの<span>IST</span>ビットクリアに使用されます。このビットを'1'に
+すると、該当する<span>IST</span>ビットがクリアされます。
+</pre>
+</div>
+</div>
+<p class="info">2021-02-28</p>
+</article>
+
+
+<article>
+<h2>OPM 汎用出力端子</h2>
+
+<h3><a id="p292_reg_l4" href="#p292_reg_l4">P.292 「❸・2 | ADPCM 関係のレジスタ」 4行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+をOPMの汎用出力端子<span>CT2</span>で行えるようにしています。
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+をOPMの汎用出力端子<span>CT1</span>で行えるようにしています。
+</pre>
+</div>
+</div>
+<p class="info">(情報源: X68000 関係資料正誤表) 2021-02-28</p>
+
+<h3><a id="p293_z32" href="#p293_z32">P.293 図32</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+┌────┬─────┬──┬──┬──
+│アドレス│READ/WRITE│bit7│ 6  │ 5
+┝━━━━┿━━━━━┿━━┿━━┿━━
+│$E90003 │     W    │<span>CT2</span> │<span>CT1</span> │
+└────┴─────┴──┴──┴──
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+┌────┬─────┬──┬──┬──
+│アドレス│READ/WRITE│bit7│ 6  │ 5
+┝━━━━┿━━━━━┿━━┿━━┿━━
+│$E90003 │     W    │<span>CT1</span> │<span>CT2</span> │
+└────┴─────┴──┴──┴──
+</pre>
+</div>
+</div>
+<p class="info">(情報源: X68000 関係資料正誤表) 2021-02-28</p>
+</article>
+
+
+<article>
+<h2>キーボード/マウス関連ポート</h2>
+
+<h3><a id="p355_z2" href="#p355_z2">P.355 図2</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+┌────┬────┬─
+│デバイス│アドレス│
+├────┼────┼─
+│        │$E8<span>00</span>27 │
+│        ├────┼─
+│        │$E8<span>00</span>29 │
+│        ├────┼─
+│   MFP  │$E8<span>00</span>2B │
+│        ├────┼─
+│        │$E8<span>00</span>2D │
+│        ├────┼─
+│        │$E8<span>00</span>2E │
+├────┼────┼─
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+┌────┬────┬─
+│デバイス│アドレス│
+├────┼────┼─
+│        │$E8<span>80</span>27 │
+│        ├────┼─
+│        │$E8<span>80</span>29 │
+│        ├────┼─
+│   MFP  │$E8<span>80</span>2B │
+│        ├────┼─
+│        │$E8<span>80</span>2D │
+│        ├────┼─
+│        │$E8<span>80</span>2E │
+├────┼────┼─
+</pre>
+</div>
+</div>
+<p class="info">1996-05-09</p>
+</article>
+
+
+<article>
+<h2>キー配列とキーコード</h2>
+
+<h3><a id="p358_z6" href="#p358_z6">P.358 図6</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+┌──┬────┬─────┐
+│かな│ローマ字│<span> かな入力 </span>│
+└──┴────┴─────┘
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+┌──┬────┬─────┐
+│かな│ローマ字│<span>コード入力</span>│
+└──┴────┴─────┘
+</pre>
+</div>
+</div>
+<p class="info">(情報源: X68000 関係資料正誤表) 2021-02-28</p>
+</article>
+
+
+<article>
+<h2>キーボードへの制御コマンド</h2>
+
+<h3><a id="p359_z7" href="#p359_z7">P.359 図7</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+├──┼──┼──┼──┼──┼──┼──┼──╂
+│ '0'│ '1'│ '0'│ '1'│ '0'│ '1'│  BRIG<span>TH</span>  ┃
+├──┼──┼──┼──┼──┼──┼──┼──╂
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+├──┼──┼──┼──┼──┼──┼──┼──╂
+│ '0'│ '1'│ '0'│ '1'│ '0'│ '1'│  BRIG<span>HT</span>  ┃
+├──┼──┼──┼──┼──┼──┼──┼──╂
+</pre>
+</div>
+</div>
+<p class="info">1997-02-22</p>
+</article>
+
+
+<article>
+<h2>マウスのステータスデータ</h2>
+
+<h3><a id="p368_z22" href="#p368_z22">P.368 図22</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+┬──┬──┐
+│SW-<span>L</span>│SW-<span>R</span>│
+┴──┴──┘
+   │    │
+   │    1:<span>右</span>スイッチON
+   │    0:<span>右</span>スイッチOFF
+1:<span>左</span>スイッチON
+0:<span>左</span>スイッチOFF
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+┬──┬──┐
+│SW-<span>R</span>│SW-<span>L</span>│
+┴──┴──┘
+   │    │
+   │    1:<span>左</span>スイッチON
+   │    0:<span>左</span>スイッチOFF
+1:<span>右</span>スイッチON
+0:<span>右</span>スイッチOFF
+</pre>
+</div>
+</div>
+<p class="info">1996-05-09</p>
+</article>
+
+
+<article>
+<h2>本体内蔵 FDD の仕様</h2>
+
+<h3><a id="p390_z2" href="#p390_z2">P.390 図2</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+├─────────────╂
+│メ　デ　ィ　ア　回　転　<span>送</span>┃
+├─────────────╂
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+├─────────────╂
+│メ　デ　ィ　ア　回　転　<span>数</span>┃
+├─────────────╂
+</pre>
+</div>
+</div>
+<p class="info">(情報源: X68000 関係資料正誤表) 2021-02-28</p>
+</article>
+
+
+<article>
+<h2>FDC ステータスレジスタ</h2>
+
+<h3><a id="p397_z11" href="#p397_z11">P.397 図11</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+1：<span>FCD</span>からホストへの転送
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+1：<span>FDC</span>からホストへの転送
+</pre>
+</div>
+</div>
+<p class="info">(情報源: X68000 関係資料正誤表) 2021-02-28</p>
+</article>
+
+
+<article>
+<h2>FDC - READ DATA コマンド</h2>
+
+<h3><a id="p404_z19" href="#p404_z19">P.404 図19</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+┼──┼──┼──┼──┼──┼──┼──┼──┼───────
+│<span>'0'</span> │ MF │<span>'0'</span> │'0' │'0' │<span>'0'</span> │'1' │'0' │ <span>            </span>
+┼──┼──┼──┼──┼──┼──┼──┼──┼───────
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+┼──┼──┼──┼──┼──┼──┼──┼──┼───────
+│ <span>MT</span> │ MF │ <span>SK</span> │'0' │'0' │<span>'1'</span> │'1' │'0' │ <span>SK:Skip DDAM</span>
+┼──┼──┼──┼──┼──┼──┼──┼──┼───────
+</pre>
+</div>
+</div>
+
+<p>※初版第4刷以降では修正済み(第2,3刷は不明)。</p>
+<p class="info">2021-02-28</p>
+</article>
+
+
+<article>
+<h2>FDC - WRITE DELETED DATA コマンド</h2>
+
+<h3><a id="p411_z25" href="#p411_z25">P.411 図25</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+┼──┼──┼──┼──┼──┼──┼──┼──┼
+│ MT │ MF │ <span>SK</span> │'0' │<span>'0'</span> │<span>'1'</span> │<span>'1'</span> │<span>'0'</span> │
+┼──┼──┼──┼──┼──┼──┼──┼──┼
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+┼──┼──┼──┼──┼──┼──┼──┼──┼
+│ MT │ MF │<span>'0'</span> │'0' │<span>'1'</span> │<span>'0'</span> │<span>'0'</span> │<span>'1'</span> │
+┼──┼──┼──┼──┼──┼──┼──┼──┼
+</pre>
+</div>
+</div>
+
+<p>※初版第2刷ではSKのみ修正済み。</p>
+<p class="info">1996-05-09</p>
+</article>
+
+
+<article>
+<h2>FDC - READ DIAGNOSTIC コマンド</h2>
+
+<h3><a id="p412_z26" href="#p412_z26">P.412 図26</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+┼──┼──┼──┼──┼──┼──┼──┼──┼
+│ <span>MT</span> │ MF │'0' │'0' │<span>'1'</span> │'0' │<span>'0'</span> │<span>'1'</span> │
+┼──┼──┼──┼──┼──┼──┼──┼──┼
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+┼──┼──┼──┼──┼──┼──┼──┼──┼
+│<span>'0'</span> │ MF │'0' │'0' │<span>'0'</span> │'0' │<span>'1'</span> │<span>'0'</span> │
+┼──┼──┼──┼──┼──┼──┼──┼──┼
+</pre>
+</div>
+</div>
+
+<p>※初版第2刷ではMTのみ修正済み。</p>
+<p>※初版第4刷以降では修正済み(第3刷は不明)。</p>
+<p class="info">1996-05-09</p>
+</article>
+
+
+<article>
+<h2>FDC - SENSE INTERRUPT STATUS コマンド</h2>
+
+<h3><a id="p417_z32" href="#p417_z32">P.417 図32</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+├────╂
+│<span>E</span>-PHASE ┃
+└────┸
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+├────╂
+│<span>R</span>-PHASE ┃
+└────┸
+</pre>
+</div>
+</div>
+<p class="info">(情報源: X68000 関係資料正誤表) 2021-02-28</p>
+</article>
+
+
+<article>
+<h2>FDC - RESET STANDBY コマンド</h2>
+
+<h3><a id="p420_rs" href="#p420_rs">P.420 「❺・15 | RESTE STANDBY コマンド」 見出し</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+❺・15 | <span>RESTE</span> STANDBY コマンド
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+❺・15 | <span>RESET</span> STANDBY コマンド
+</pre>
+</div>
+</div>
+<p class="info">1998-12-19</p>
+</article>
+
+
+<article>
+<h2>SCSI-ROM 識別ラベル</h2>
+
+<h3><a id="p466_scsi_l5" href="#p466_scsi_l5">P.466 「❷・1 | SCSI関連ポート，割り込み」 5行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+<span>5</span>バイトに'SCSIIN'という文字列が、CZ-6BS1では$EA0044からの<span>5</span>バイトに…
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+<span>6</span>バイトに'SCSIIN'という文字列が、CZ-6BS1では$EA0044からの<span>6</span>バイトに…
+</pre>
+</div>
+</div>
+<p class="info">1997-05-04</p>
+</article>
+
+
+<!--
+<article>
+<h2></h2>
+
+<h3><a id="p" href="#p"></a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+</pre>
+</div>
+</div>
+<p class="info">19xx-xx-xx</p>
+</article>
+-->
+
+
+<footer>
+<p><a href="./">README</a></p>
+</footer>
+
+</body>
+</html>

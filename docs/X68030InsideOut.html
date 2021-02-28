@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<title>X68030 Inside/Out 非公式正誤表</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+<h1>X68030 Inside/Out 非公式正誤表</h1>
+</header>
+
+
+<article>
+<h2>MC68030のキャッシュコントロールレジスタ</h2>
+
+<h3><a id="p36_cacr_l5" href="#p36_cacr_l5">P.36 「キャッシュメモリと関連レジスタ」 5行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+…制御ビット（<span>CBE</span>/DBE）が設けられて…
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+…制御ビット（<span>IBE</span>/DBE）が設けられて…
+</pre>
+</div>
+</div>
+<p class="info">(情報源: X68000 関係資料正誤表) 2021-02-28</p>
+
+<h3><a id="p38_cacr_l1" href="#p38_cacr_l1">P.38 「キャッシュメモリと関連レジスタ」 1行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+…対応していないため，<span>CBE</span>/DBEビットの…
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+…対応していないため，<span>IBE</span>/DBEビットの…
+</pre>
+</div>
+</div>
+<p class="info">(情報源: X68000 関係資料正誤表) 2021-02-28</p>
+
+<h3><a id="p37_z21" href="#p37_z21">P.37 図21</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+─┬─┬─┬──┬─┬──┬─┬─┬─┬─┬─┬──┬─┬──┬─┬─┐
+  │<span>CD</span>│WA│DBE │CD│CED │FD│ED│     0    │IBE │CI│CEI │FI│EI│
+─┴─┴─┴──┴─┴──┴─┴─┴─┴─┴─┴──┴─┴──┴─┴─┘
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+─┬─┬─┬──┬─┬──┬─┬─┬─┬─┬─┬──┬─┬──┬─┬─┐
+  │<span>0 </span>│WA│DBE │CD│CED │FD│ED│     0    │IBE │CI│CEI │FI│EI│
+─┴─┴─┴──┴─┴──┴─┴─┴─┴─┴─┴──┴─┴──┴─┴─┘
+</pre>
+</div>
+</div>
+<p class="info">(情報源: X68000 関係資料正誤表) 2021-02-28</p>
+</article>
+
+
+<article>
+<h2>アドレッシングモードの指定</h2>
+
+<h3><a id="p75_z4" href="#p75_z4">P.75 図4</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+│ Dn           │000│<span>アドレス</span>レジスタ番号
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+│ Dn           │000│<span>データ</span>レジスタ番号
+</pre>
+</div>
+</div>
+<p class="info">1997-11-17</p>
+</article>
+
+
+<article>
+<h2>タイプ 001(FDBcc/FScc/FTRAPcc)の命令フォーマット</h2>
+
+<h3><a id="p78_z7" href="#p78_z7">P.78 図7</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+│111 │000     │<span>未定義(モトローラ予約)</span>
+├──┼────┼───────────
+│111 │001     │<span>未定義(モトローラ予約)</span>
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+│111 │000     │<span>FScc (abs).W</span>
+├──┼────┼───────────
+│111 │001     │<span>FScc (abs).L</span>
+</pre>
+</div>
+</div>
+<p class="info">1997-11-17</p>
+</article>
+
+
+<article>
+<h2>サンプルプログラム</h2>
+
+<h3><a id="p102_list" href="#p102_list">P.102</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+●リスト  <span>数値演算プロセッサ用の命令を，68000 用アセンブラでアセンブルするためのフィルタ</span>
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+●リスト  <span>MC68882 の平行動作機能の実験</span>
+</pre>
+</div>
+</div>
+<p class="info">1997-11-17</p>
+</article>
+
+
+<article>
+<h2>電源部基本配線図</h2>
+
+<h3><a id="pu_c27c28" href="#pu_c27c28">C27 C28 の極性</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+─┬──○┃   IC23   ┃○──┬─
+  │      ┃UPC78M12HF┃      │
+  │      ┗━━━━━┛      │
+<span>－</span>│ C27        ○      C28 <span>－</span>│
+  Ⅲ 220μ      │    100μ   Ⅲ
+<span>＋</span>│ (25V)      │    (16V) <span>＋</span>│
+  │            │            │
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+─┬──○┃   IC23   ┃○──┬─
+  │      ┃UPC78M12HF┃      │
+  │      ┗━━━━━┛      │
+<span>＋</span>│ C27        ○      C28 <span>＋</span>│
+  Ⅲ 220μ      │    100μ   Ⅲ
+<span>－</span>│ (25V)      │    (16V) <span>－</span>│
+  │            │            │
+</pre>
+</div>
+</div>
+<p class="info">2021-02-28</p>
+</article>
+
+
+<article>
+<h2>メイン基本配線図(1)</h2>
+
+<h3><a id="mb1_ciin" href="#mb1_ciin"><span class="negative-logic">CIIN</span>: Cache Inhibit Input</a></h3>
+<p>中央 MC68EC030 のチップ内左下。</p>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+ F12┃_____
+──┨RESET
+  L1┃<span>    </span>
+──┨<span>    </span>
+    ┗━━━━━
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+ F12┃_____
+──┨RESET
+  L1┃<span>____</span>
+──┨<span>CIIN</span>
+    ┗━━━━━
+</pre>
+</div>
+</div>
+<!-- pre 内では、text-decoration: overline; だと線が文字に重なる、コピペ時に欠落するので上の行にアンダーバーを置く。 -->
+<p class="info">(情報源: X68000 関係資料正誤表) 2021-02-28</p>
+</article>
+
+
+<footer>
+<p><a href="./">README</a></p>
+</footer>
+
+</body>
+</html>

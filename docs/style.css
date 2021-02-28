@@ -1,0 +1,70 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+html { font-size: 16px; }
+
+h1, h2, h3, div, p, pre {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 8px;
+    background-color: whitesmoke;
+    line-height: 1.5;
+}
+
+h1 { font-size: 1.5em; text-align: center; }
+h2 { font-size: 1.2em; margin: 1.5em 0em 0.2em -1.0em; }
+h3 { font-size: 1.1em; margin: 0em 0em 0.2em -0.5em; }
+h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+article {
+    margin-right: 1em;
+    padding-left: 2em;
+}
+
+.box div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.box div p {
+    width: 3em;
+    text-align: center;
+}
+.box div pre {
+    width: 100%;
+    padding: 8px;
+    background-color: white;
+    line-height: 1;
+}
+.box div pre.text-only { line-height: 1.5; }
+
+.negative-logic { text-decoration: overline; }
+
+.ng pre span { color: red; }
+.ok pre span { color: blue; }
+.box:hover div.ng pre span { background-color: lavenderblush; }
+.box:hover div.ok pre span { background-color: aliceblue; }
+
+.info {
+    text-align: right;
+    font-size: 0.8em;
+}
+
+ul {
+    list-style: inside "・";
+    padding-left: 0;
+}
+
+footer {
+    margin-top: 20em;
+    border-top: solid 1px black;
+}
