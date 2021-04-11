@@ -1262,6 +1262,28 @@ R0（アドレス：<span>$</span>E82400<span> </span>）
 </article>
 
 
+<article>
+<h2>SCSIディスクからの指定ブロック読み出し</h2>
+
+<h3><a id="p515_list1" href="#p515_list1">P.515 リスト1 &nbsp; 5行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre class="text-only">
+5:    dma-&gt;cpr = 0x<span>08</span>;
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre class="text-only">
+5:    dma-&gt;cpr = 0x<span>03</span>;
+</pre>
+</div>
+</div>
+<p class="info">19xx-xx-xx</p>
+</article>
+
+
 <!--
 <article>
 <h2></h2>
