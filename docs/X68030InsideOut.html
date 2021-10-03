@@ -16,7 +16,7 @@
 <article>
 <h2>MC68030のキャッシュコントロールレジスタ</h2>
 
-<h3><a id="p36_cacr_l5" href="#p36_cacr_l5">P.36 「キャッシュメモリと関連レジスタ」 5行目</a></h3>
+<h3><a id="p36_cacr_l5" href="#p36_cacr_l5">P.36 「❺・❹ キャッシュメモリと関連レジスタ」 5行目</a></h3>
 <div class="box">
 <div class="ng">
 <p>誤</p>
@@ -33,7 +33,7 @@
 </div>
 <p class="info">(情報源: X68000 関係資料正誤表) 2021-02-28</p>
 
-<h3><a id="p38_cacr_l1" href="#p38_cacr_l1">P.38 「キャッシュメモリと関連レジスタ」 1行目</a></h3>
+<h3><a id="p38_cacr_l1" href="#p38_cacr_l1">P.38 「❺・❹ キャッシュメモリと関連レジスタ」 1行目</a></h3>
 <div class="box">
 <div class="ng">
 <p>誤</p>
@@ -70,6 +70,110 @@
 </div>
 </div>
 <p class="info">(情報源: X68000 関係資料正誤表) 2021-02-28</p>
+</article>
+
+
+<article>
+<h2>ドットクロックの値</h2>
+
+<h3><a id="p47_z5" href="#p47_z5">P.47 図5</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+├────┼─┬───────────────┤
+│        │  │              <span>  </span>              │
+│  HRL   │HF├───┬───┬───┬───┤
+│        │  │  00  │  01  │  10  │  11  │
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+├────┼─┬───────────────┤
+│        │  │              <span>HD</span>              │
+│  HRL   │HF├───┬───┬───┬───┤
+│        │  │  00  │  01  │  10  │  11  │
+</pre>
+</div>
+</div>
+<p class="info">2021-10-03</p>
+</article>
+
+
+<article>
+<h2>垂直方向の動作モード選択</h2>
+
+<h3><a id="p49_z7" href="#p49_z7">P.49 図7</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+●図7……<span>HL</span>, VDビットの設定と垂直方向の動作モード
+┌─┬─┬───────────┐
+│<span>HL</span>│VD│動作モード            │
+├─┼─┼───────────┤
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+●図7……<span>HF</span>, VDビットの設定と垂直方向の動作モード
+┌─┬─┬───────────┐
+│<span>HF</span>│VD│動作モード            │
+├─┼─┼───────────┤
+</pre>
+</div>
+</div>
+<p class="info">2021-10-03</p>
+
+<h3><a id="p50_vd_l1" href="#p50_vd_l1">P.50 「❸ 垂直方向の動作モード選択」 1行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+　これらの動作は R20 の<span>HL</span>ビット， およびVDビットで決められます。 この関係を図7に示し
+ます。<span>HL</span>が‘0’のときは二度読み動作はできないようになっています。<span>HL</span>が‘1’のときには
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+　これらの動作は R20 の<span>HF</span>ビット， およびVDビットで決められます。 この関係を図7に示し
+ます。<span>HF</span>が‘0’のときは二度読み動作はできないようになっています。<span>HF</span>が‘1’のときには
+</pre>
+</div>
+</div>
+<p class="info">2021-10-03</p>
+</article>
+
+
+<article>
+<h2>CRTCレジスタ設定値計算プログラム</h2>
+
+<h3><a id="p52_list" href="#p52_list">P.52 リスト &nbsp; 14～17行目</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre class="text-only">
+14: float dot_clock8[3][4] = {          <span>/* 上位:- [HRL:ｼｽﾃﾑﾎﾟｰﾄ]*2+[HF:R20] */    </span>
+15:                         <span>/* 下位:- [HD:R20]          */                        </span>
+16:                         <span>/*                    256 512 768   */                </span>
+17:     1.64678, 0.82339, 1.64678,<span></span>1.64678,<span> </span> /* Low-Mode    8*1/39 *8  *4  *8    */
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre class="text-only">
+14: float dot_clock8[3][4] = {          <span>    /* 上位:- [HRL:ｼｽﾃﾑﾎﾟｰﾄ]*2+[HF:R20] */</span>
+15:                         <span>                /* 下位:- [HD:R20]                  */</span>
+16:                         <span>                /*                    256 512 768   */</span>
+17:     1.64678, 0.82339, 1.64678,<span> </span>1.64678, /* Low-Mode    8*1/39 *8  *4  *8    */
+</pre>
+</div>
+</div>
+<p>※編注：コメントの位置がずれているだけすが、分かりにくいので揃えたものを掲載しておきます。</p>
+<p class="info">2021-10-03</p>
 </article>
 
 
@@ -146,7 +250,7 @@
 <article>
 <h2>DRAMアクセスタイミング</h2>
 
-<h3><a id="p122_l6" href="#p122_l6">P.122 「DRAMアクセスタイミング」 6行目</a></h3>
+<h3><a id="p122_l6" href="#p122_l6">P.122 「❷ DRAMアクセスタイミング」 6行目</a></h3>
 <div class="box">
 <div class="ng">
 <p>誤</p>
