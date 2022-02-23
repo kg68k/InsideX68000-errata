@@ -366,6 +366,34 @@ bit 95      91    <span>80 79</span>
 
 
 <article>
+<h2>RTC 周辺ブロック図</h2>
+
+<h3><a id="p148_z1" href="#p148_z1">P.148 図1</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+      ┃  │    <span>┌──→</span>┃<span>GPIP5</span>       ┃
+ ALARM┠─┘    <span>│</span>      ┗━━━━━━┛
+      ┃        <span>│</span>      ┏━━━━━━┓
+CLKOUT┠────<span>┴</span>──→┃Timer-LEDの ┃
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+      ┃  │    <span>        </span>┃<span>     </span>       ┃
+ ALARM┠─┘    <span>  </span>      ┗━━━━━━┛
+      ┃        <span>  </span>      ┏━━━━━━┓
+CLKOUT┠────<span>─</span>──→┃Timer-LEDの ┃
+</pre>
+</div>
+</div>
+<p class="info">2022-02-23</p>
+</article>
+
+
+<article>
 <h2>RTC RESET コントローラ</h2>
 
 <h3><a id="p154_z9" href="#p154_z9">P.154 図9</a></h3>
@@ -1332,7 +1360,7 @@ R0（アドレス：<span>$</span>E82400<span> </span>）
 </pre>
 </div>
 </div>
-<p class="info">19xx-xx-xx</p>
+<p class="info">2022-xx-xx</p>
 </article>
 -->
 
