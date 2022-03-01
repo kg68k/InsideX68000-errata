@@ -263,6 +263,40 @@ A │A │A │A │A │
 
 
 <article>
+<h2>タイプ 100(FSAVE)/101(FRESTORE)の命令フォーマット</h2>
+
+<h3><a id="p80_z9" href="#p80_z9">P.80 図9</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+├──────────┼──┼──────────┼
+│ (xxx).W            │<span> ／ </span>│<span>         ／         </span>│
+├──────────┼──┼──────────┼
+│ (xxx).L            │<span> ／ </span>│<span>         ／         </span>│
+├──────────┼──┼──────────┼
+│ #&lt;data&gt;            │<span>111 </span>│<span>        100         </span>│
+├──────────┼──┼──────────┼
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+├──────────┼──┼──────────┼
+│ (xxx).W            │<span>111 </span>│<span>        000         </span>│
+├──────────┼──┼──────────┼
+│ (xxx).L            │<span>111 </span>│<span>        001         </span>│
+├──────────┼──┼──────────┼
+│ #&lt;data&gt;            │<span> ／ </span>│<span>         ／         </span>│
+├──────────┼──┼──────────┼
+</pre>
+</div>
+</div>
+<p class="info">2022-03-01</p>
+</article>
+
+
+<article>
 <h2>サンプルプログラム</h2>
 
 <h3><a id="p102_list" href="#p102_list">P.102</a></h3>
