@@ -1158,6 +1158,33 @@ R0（アドレス：<span>$</span>E82400<span> </span>）
 
 
 <article>
+<h2>フロッピーディスクのトラックフォーマット</h2>
+
+<h3><a id="p402_z17" href="#p402_z17">P.402 図17</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+               ├───┬───┬─
+               │  $4E │  $00 │
+MFMフォーマット│ ×<span>$80</span>│ ×<span>2 </span> │
+               └───┴───┴─
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+               ├───┬───┬─
+               │  $4E │  $00 │
+MFMフォーマット│ ×<span>80 </span>│ ×<span>12</span> │
+               └───┴───┴─
+</pre>
+</div>
+</div>
+<p class="info">(情報源: <a href="https://twitter.com/moveccr/status/1518510814134943744">@moveccr/1518510814134943744</a>) 2022-04-26</p>
+</article>
+
+<article>
 <h2>FDC - READ DATA コマンド</h2>
 
 <h3><a id="p404_z19" href="#p404_z19">P.404 図19</a></h3>
