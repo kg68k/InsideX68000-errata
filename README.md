@@ -1,4 +1,4 @@
-# Inside X68000, X68030 Inside/Out 非公式正誤表
+# Inside X68000 シリーズ非公式正誤表
 
 
 ## (作業メモ) GitHub Pages での公開手順
