@@ -70,6 +70,40 @@ WDATA┠─        ── WRITE <span>DATA   </span>
 
 
 <article>
+  <h2>I/Oスロットの信号 割り込み/バスマスタ関係</h2>
+  
+  <h3><a id="p49_h1" href="#p48_h1">P.49 表1 拡張スロットの信号</a></h3>
+
+  <div class="box">
+    <div class="ng">
+    <p>誤</p>
+    <pre>
+| IRQ2-n | <span>O</span> | レベル2割り込み要求 |
+| IRQ4-n | <span>O</span> | レベル4割り込み要求 |
+     :       :       :
+| BR-n   | <span>O</span> | バスリクエスト |
+| BG-n   | O | バスグランド |
+| BGACK  | <span>O</span> | バスグランドアクノリッジ |
+    </pre>
+    </div>
+    <div class="ok">
+    <p>正</p>
+    <pre>
+| IRQ2-n | <span>I</span> | レベル2割り込み要求 |
+| IRQ4-n | <span>I</span> | レベル4割り込み要求 |
+     :       :       :
+| BR-n   | <span>I</span> | バスリクエスト |
+| BG-n   | O | バスグランド |
+| BGACK  | <span>I/O</span> | バスグランドアクノリッジ |
+    </pre>
+    </div>
+    </div>
+    <p class="info">2022-07-24</p>
+    
+</article>
+
+
+<article>
 <h2>拡張スロットの割り込み</h2>
 
 <h3><a id="p57_l1" href="#p57_l1">P.57 「●4 拡張スロットの割り込み」 1行目</a></h3>
