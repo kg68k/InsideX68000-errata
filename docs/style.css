@@ -47,12 +47,13 @@ article {
 }
 .box div pre.text-only { line-height: 1.5; }
 
-.negative-logic { text-decoration: overline; }
+/* negative logic */
+.neg { text-decoration: overline; }
 
-.ng pre span { color: red; }
-.ok pre span { color: blue; }
-.box:hover div.ng pre span { background-color: lavenderblush; }
-.box:hover div.ok pre span { background-color: aliceblue; }
+.ng pre span:not([class]) { color: red; }
+.ok pre span:not([class]) { color: blue; }
+.box:hover div.ng pre span:not([class]) { background-color: lavenderblush; }
+.box:hover div.ok pre span:not([class]) { background-color: aliceblue; }
 
 .info {
     text-align: right;
