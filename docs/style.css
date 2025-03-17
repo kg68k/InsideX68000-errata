@@ -50,6 +50,8 @@ article {
 /* negative logic */
 .neg { text-decoration: overline; }
 
+.inverse { color: white; background-color: black; }
+
 .ng pre span:not([class]) { color: red; }
 .ok pre span:not([class]) { color: blue; }
 .box:hover div.ng pre span:not([class]) { background-color: lavenderblush; }
