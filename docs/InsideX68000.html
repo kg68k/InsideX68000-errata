@@ -1346,6 +1346,47 @@ R0（アドレス：<span>$</span>E82400<span> </span>）
 
 
 <article>
+<h2>FDC リザルトステータス2 (ST2)</h2>
+
+<h3><a id="p401_z16_bc" href="#p401_z16_bc">P.401 図16 Bad Cylinder</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre>
+READ DIAGNOS<span> </span>ICコマンド
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre>
+READ DIAGNOS<span>T</span>ICコマンド
+</pre>
+</div>
+</div>
+
+<h3><a id="p401_z16_cm" href="#p401_z16_cm">P.401 図16 Control Mark</a></h3>
+<div class="box">
+<div class="ng">
+<p>誤</p>
+<pre class="text-only">
+1: READ DATA/READ DIAGNOSTIC/SCAN実行時にDDAMを検出した
+<span>0:</span> READ DELETED DATA実行時にDAMを検出した
+<span>  </span> 通常動作
+</pre>
+</div>
+<div class="ok">
+<p>正</p>
+<pre class="text-only">
+1: READ DATA/READ DIAGNOSTIC/SCAN実行時にDDAMを検出した
+<span>  </span> READ DELETED DATA実行時にDAMを検出した
+<span>0:</span> 通常動作
+</pre>
+</div>
+</div>
+</article>
+
+
+<article>
 <h2>フロッピーディスクのトラックフォーマット</h2>
 
 <h3><a id="p402_z17" href="#p402_z17">P.402 図17</a></h3>
@@ -1371,6 +1412,7 @@ MFMフォーマット│ ×<span>80 </span>│ ×<span>12</span> │
 </div>
 <p class="info">(情報源: <a href="https://x.com/moveccr/status/1518510814134943744">@moveccr/1518510814134943744</a>) 2022-04-26</p>
 </article>
+
 
 <article>
 <h2>FDC - READ DATA コマンド</h2>
